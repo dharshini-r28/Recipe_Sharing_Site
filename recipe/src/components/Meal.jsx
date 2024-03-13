@@ -32,7 +32,7 @@ const Meal = () => {
         <div className="main">
           <div className="heading">
             <h1>Search Your Food Recipe</h1>
-            <h4>"Welcome to a world of endless flavors and delightful discoveries. Let your culinary journey begin!" girls entha rendu la ethu nalla eruku</h4>
+            <h4>"Welcome to a world of endless flavors and delightful discoveries. Let your culinary journey begin!"</h4>
           </div>
           <div className="search">
           <input type="search" className="search-bar" onChange={e => setSearch(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') searchRecipe(e); }} />

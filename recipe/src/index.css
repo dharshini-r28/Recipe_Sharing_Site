@@ -43,12 +43,19 @@ a {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
+  margin-top: 500px;
+  display: flex;
+  align-items: end;
+  margin-left: 100%;
+  
 }
 
 .plate-image {
-  width: 500px; /* Adjust the width to increase the size */
-  height: auto; /* Maintain aspect ratio */
+  width: 500px; 
+  height: auto; 
   border-radius: 50%;
+ 
+ 
   animation: fadeInRotate 2s ease;
 }
 
@@ -59,6 +66,8 @@ a {
   z-index: 1;
   color: white;
   font-size: 30px;
+  margin-left: 400px;
+  margin-top: 200px;
 }
 
 .sidenav {
@@ -131,5 +140,11 @@ span {
 
 .log img {
   border-radius: 50%;
+}
+#mySidenav{
+  color: white;
+}
+.log{
+  margin: 0%;
 }
 

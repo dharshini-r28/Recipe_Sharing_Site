@@ -31,7 +31,7 @@ children:[
   element:<About/>,
 },
 {
-path:"/idMeal",
+path:"/:MealId",
 element:<RecipeInfo/>
 }
 ]

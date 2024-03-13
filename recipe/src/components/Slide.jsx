@@ -14,13 +14,13 @@ const Slide = () => {
         <>
             <div id="mySidenav" className="sidenav">
                 <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
-                <div className="ptitle"><h2>USER PROFILE</h2></div>
-                <div className="log"> <img src={logo} width="80px" alt="Logo" /></div>
+                <div className="ptitle"><h2>USER PROFILE</h2></div><br></br><br></br>
+                <div className="log"> <img src={logo}  alt="Logo" /></div>
                 <div className="info">
                     <form>
-                        <p>NAME: ABI</p>
-                        <p>EMAIL ID: ABI@gmail.com</p>
-                        <p>AGE: 23</p>
+                        <p>NAME: ABI</p><br></br>
+                        <p>EMAIL ID: ABI@gmail.com</p><br></br>
+                        <p>AGE: 23</p><br></br>
                         <p>GENDER: FEMALE</p>
                         <p>PHONE NO: 2341574684</p>
                         <p>COUNTRY: INDIA</p>
@@ -33,7 +33,7 @@ const Slide = () => {
 
             <div className="content">
                 <div className="plate">
-                    <img className="plate-image w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full fadeInRotate" src={plateImage} alt="Plate" />
+                    <img className="plate-image  fadeInRotate" src={plateImage} alt="Plate" />
                 </div>
                 <div className="text">
                     <h1>Welcome To Taste Trove</h1>
