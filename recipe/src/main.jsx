@@ -9,6 +9,10 @@ import Create from './components/Create.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Entier from './components/Entier.jsx'
 import RecipeInfo from './components/RecipeInfo.jsx'
+import My_recipe from './components/My_recipe.jsx'
+import Login from './components/Login.jsx'
+
+import Sign from './Sign.jsx'
 const router=createBrowserRouter([
   {
     path :"/",
@@ -16,7 +20,15 @@ const router=createBrowserRouter([
 children:[
 {
   path :"/",
-  element:<Entier/>,
+  element:<Login/>,
+},
+{
+  path:'/signup',
+  element:<Sign/>
+},
+{
+  path:'/Entier',
+  element:<Entier/>
 },
 {
   path:"/Recipe",
@@ -33,6 +45,11 @@ children:[
 {
 path:"/:MealId",
 element:<RecipeInfo/>
+},
+
+{
+  path:"/My_recipe" ,
+  element:<My_recipe /> 
 }
 ]
 }

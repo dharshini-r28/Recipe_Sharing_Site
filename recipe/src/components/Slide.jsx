@@ -12,7 +12,11 @@ const Slide = () => {
 
     return (
         <>
+            <div className="bg-image">
+        <img src="public\img10.jpg" alt="Background Image" />
+    </div>
             <div id="mySidenav" className="sidenav">
+
                 <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
                 <div className="ptitle"><h2>USER PROFILE</h2></div><br></br><br></br>
                 <div className="log"> <img src={logo}  alt="Logo" /></div>
@@ -31,17 +35,19 @@ const Slide = () => {
 
             <span style={{ fontSize: '30px', cursor: 'pointer', color: 'white' }} onClick={openNav}>&#9776;</span>
 
-            <div className="content">
-                <div className="plate">
-                    <img className="plate-image  fadeInRotate" src={plateImage} alt="Plate" />
+            <div className="contenth">
+        
+        
                 </div>
                 <div className="text">
-                    <h1>Welcome To Taste Trove</h1>
+                    <h1>Welcome To Taste Trove !!!!</h1>
+                    <br></br>
                     <h2 id="t1">Where You Can </h2>
-                    <h3 id="t2">Share Your Recipes</h3>
+                    <h3 id="t2">Share Your Recipes</h3><br></br>
+                    <h3 id="t2"><mark>Love...Share...Connect</mark></h3>
                     <div className="quotes"><h4>"Discover culinary wonders that tantalize your taste buds and ignite your passion for cooking!"</h4></div>
                 </div>
-            </div>
+            
         </>
     );
 }

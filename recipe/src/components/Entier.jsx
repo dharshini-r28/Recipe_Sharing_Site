@@ -6,7 +6,7 @@ const Entier = () => {
   return (
     <>
     <div className="All">
-      <Bar/>
+      {/*<Bar/>*/}
     </div>
       <Slide/>
    

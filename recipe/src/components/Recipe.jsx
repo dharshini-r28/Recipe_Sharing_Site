@@ -5,6 +5,9 @@ import { Routes,Route } from "react-router-dom"
 const Recipe=()=>{
     return(
         <>
+         <div className="bg-image">
+        <img src="img43.jpg" alt="Background Image" />
+    </div>
         <Meal/>
         
         </>

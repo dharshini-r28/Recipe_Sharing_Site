@@ -8,6 +8,7 @@ const Bar = () => {
       <Link to="/">Home</Link>
       <Link to="/Recipe">Recipes</Link>
       <Link to="/Create">Create Recipe</Link>
+      <Link to="/My_recipe">My Recipe</Link>
       <Link to="/About">About Us</Link>
     </div>
   );
