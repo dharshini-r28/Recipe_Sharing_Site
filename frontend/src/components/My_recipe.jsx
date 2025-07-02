@@ -8,14 +8,14 @@ function My_recipe() {
 }, []);
 
 async function getRecipes() {
-    const username = localStorage.getItem("username"); // ✅ get logged-in user
+    const username = localStorage.getItem("username"); // get logged-in user
     try {
         const response = await fetch('http://localhost:7000/getrecipe', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ username }) // ✅ send username
+            body: JSON.stringify({ username }) // send username
         });
         const data = await response.json();
         setRecipes(data);

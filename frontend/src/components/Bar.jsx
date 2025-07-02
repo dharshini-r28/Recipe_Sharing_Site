@@ -67,9 +67,9 @@ const Bar = () => {
       <Link to="/Recipe">Recipes</Link>
       <Link to="/Create">Create Recipe</Link>
       <Link to="/My_recipe">My Recipe</Link>
-      <Link to="/About">About Us</Link>
+      {/* <Link to="/About">About Us</Link> */}
 
-      {/* ✅ Show logout button only if logged in */}
+      {/* Show logout button only if logged in */}
       {isLoggedIn && (
         <button onClick={handleLogout} className="logout-button">
           Log out
