@@ -19,16 +19,7 @@
   justify-content: center;
 }
 
-.bg-image {
-  position: fixed; /* Position image behind content */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  z-index: -1; /* Place image behind other elements */
-  /* Optional: Additional styling for image */
-}
+
 
 .forms-container {
   width: 100%;
@@ -253,7 +244,7 @@ span {
   margin: 30px auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 400px));
-  grid-gap: 10px;
+  grid-gap: 100px;
 
 }
 .recipe-image {
@@ -404,6 +395,155 @@ body{
   font-size: 25px;
   font-family: 'Rajdhani', sans-serif;
   text-decoration: none;
+}
+.background {
+  background: url("sug.jpg") no-repeat center center fixed;
+  background-size: cover;   /* Makes it fit full screen */
+  min-height: 100vh;        /* Full viewport height */
+  width: 100%;
+  overflow-y: auto;         /* Allow scrolling */
+}
+
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8); /* white overlay for readability */
+  border-radius: 10px;
+}
+.card {
+  width: 250px;   /* match MealDB card size */
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+  text-align: center;
+  background: #fff;
+}
+
+.meal-img {
+  width: 100%;
+  height: 200px;        /* fixed height */
+  object-fit: cover;    /* crop image to fit nicely */
+  border-bottom: 2px solid #eee;
+}
+
+.card h3 {
+  padding: 10px;
+  font-size: 18px;
+}
+.share-btn {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.share-btn:hover {
+  background-color: #e84118;
+}
+
+/* Popup background */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Popup box */
+.popup-content {
+  background: #ff4d4d;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.popup-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Buttons inside popup */
+.popup-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.yes-btn, .no-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.yes-btn {
+  background: white;
+  color: #ff4d4d;
+}
+.no-btn {
+  background: #222;
+  color: white;
+}
+
+.yes-btn:hover {
+  background: #f1f1f1;
+}
+.no-btn:hover {
+  background: #444;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/img10.jpg") no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+}
+
+.text {
+  text-align: center;
+  z-index: 1;
+  color: white;
+  font-size: 30px;
+  position: absolute; /* Center over background */
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.quotes {
+  margin-top: 0px;
 }
 
 

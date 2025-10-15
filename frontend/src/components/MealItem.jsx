@@ -8,7 +8,7 @@ const MealItem = ({ data }) => {
                 data.map(item => (
                     <Link key={item.idMeal} to={`/${item.idMeal}`}>
                         <div className="card">
-                            <img src={item.strMealThumb} alt="" />
+                            <img src={item.strMealThumb} alt="" className="meal-img"/>
                             <h3>{item.strMeal}</h3>
                         </div>
                     </Link>

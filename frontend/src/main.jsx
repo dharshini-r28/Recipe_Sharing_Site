@@ -76,6 +76,7 @@ import My_recipe from './components/My_recipe.jsx';
 import Login from './components/Login.jsx';
 import Sign from './Sign.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx'; 
+import IngredientSuggestions from './components/IngredientSuggestions.jsx';
 
 const router = createBrowserRouter([
   {
@@ -106,6 +107,15 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+      {
+  path: "/Suggestions",
+  element: (
+    <ProtectedRoute>
+      <IngredientSuggestions />
+    </ProtectedRoute>
+  ),
+},
+
       {
         path: "/Create",
         element: (

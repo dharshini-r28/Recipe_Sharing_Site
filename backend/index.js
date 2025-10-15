@@ -68,31 +68,19 @@ app.post('/login',async function(request,response){
     })
 })
 
-// app.add('/addrecipe', async (request, response) => {
-//     try {
-//         const newRecipe = await recipe.create({
-//             title: request.body.title,
-//             ingredients: request.body.ingredients,
-//             category: request.body.category,
-//             imageUrl: request.body.imageUrl,
-//             description: request.body.description,
-//             createdBy: request.body.createdBy 
-//         });
-//         response.status(201).json(newRecipe);
-//     } catch (error) {
-//         console.error(error);
-//         response.status(500).json({ error: "Internal server error" });
-//     }
-// });
+
 app.post('/addrecipe', async (request, response) => {
     try {
+      
+
         const newRecipe = await recipe.create({
             title: request.body.title,
             ingredients: request.body.ingredients,
+            
             category: request.body.category,
             imageUrl: request.body.imageUrl,
             description: request.body.description,
-            createdBy: request.body.createdBy 
+            createdBy: request.body.createdBy
         });
         response.status(201).json(newRecipe);
     } catch (error) {
@@ -102,14 +90,6 @@ app.post('/addrecipe', async (request, response) => {
 });
 
 
-app.get('/addrecipe', async (req, res) => {
-    try {
-        const allRecipes = await recipe.find({});
-        res.status(200).json(allRecipes);
-    } catch (error) {
-        res.status(500).json({ error: "Failed to fetch recipes" });
-    }
-});
 app.post('/getrecipe', async function(request, response) {
     try {
         const { username } = request.body;
@@ -122,3 +102,49 @@ app.post('/getrecipe', async function(request, response) {
         });
     }
 });
+// Share recipe
+app.post('/share-recipe', async (req, res) => {
+    try {
+        const { recipeId } = req.body;
+        const updatedRecipe = await recipe.findByIdAndUpdate(
+            recipeId,
+            { shared: true },
+            { new: true }
+        );
+        res.status(200).json(updatedRecipe);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to share recipe" });
+    }
+});
+
+// Get all shared recipes
+// Search shared recipes (by first letter or by name)
+app.get('/shared-recipes', async (req, res) => {
+    try {
+        const { f, s } = req.query; 
+        let query = { shared: true };
+
+        if (f) {
+            query.title = new RegExp(`^${f}`, "i"); 
+        }
+        if (s) {
+            query.title = new RegExp(s, "i"); 
+        }
+
+        const sharedRecipes = await recipe.find(query);
+        res.status(200).json(sharedRecipes);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch shared recipes" });
+    }
+});
+
+app.get('/recipe/:id', async (req, res) => {
+    try {
+        const recipeget = await recipe.findById(req.params.id);
+        if (!recipeget) return res.status(404).json({ error: "Recipe not found" });
+        res.json(recipeget);
+    } catch (error) {
+        res.status(500).json({ error: "Error fetching recipe" });
+    }
+});
+
